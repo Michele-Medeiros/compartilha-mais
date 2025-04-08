@@ -460,7 +460,6 @@ background: #EDE9F1;
     font-weight: 500;
 }
 
-/* Botões de categoria */
 .filter-category button {
     height: 50px;
     padding: 14px;
@@ -861,7 +860,7 @@ background: #EDE9F1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Mantém os itens alinhados no topo */
+    justify-content: flex-start;
 }
 
 .gallery-item-doar img {
@@ -873,7 +872,7 @@ background: #EDE9F1;
 }
 
 .add-photo-btn {
-    margin-top: 30px; /* Apenas um pequeno espaço entre a imagem e o botão */
+    margin-top: 30px;
     width: 40px;
     height: 40px;
     background-color: #5E2E91;
@@ -892,7 +891,6 @@ background: #EDE9F1;
     background-color: #4A2373;
 }
 
-/* Botões (NOVO) */
 .action-buttons {
     display: flex;
     justify-content: end;
@@ -1170,7 +1168,6 @@ form .register {
 
 /*Registrar */
 
-/* Centraliza tudo na tela */
 .cadastro-wrapper {
     display: flex;
     justify-content: center;
@@ -1178,7 +1175,6 @@ form .register {
     height: 120vh;
 }
 
-/* Container principal */
 .cadastro-container {
     display: flex;
     width: 90%;
@@ -1190,7 +1186,6 @@ form .register {
     padding: 40px;
 }
 
-/* Lado esquerdo - Imagem */
 .cadastro-left-side {
     flex: 1;
     display: flex;
@@ -1203,7 +1198,6 @@ form .register {
     height: auto;
 }
 
-/* Lado direito - Formulário */
 .cadastro-right-side {
     flex: 2;
     padding: 20px 40px;
@@ -1216,7 +1210,6 @@ form .register {
     margin-bottom: 20px;
 }
 
-/* Layout dos inputs */
 .form-row {
     display: flex;
     justify-content: space-between;
@@ -1253,14 +1246,12 @@ form .register {
     line-height: 1.3;
 }
 
-/* Mensagem de erro */
 .error-msg {
     color: red;
     font-size: 12px;
     margin-top: 5px;
 }
 
-/* Botão */
 .cadastro-btn {
     width: 30%;
     margin: 0 auto;
@@ -1274,7 +1265,6 @@ form .register {
     margin-top: 20px;
 }
 
-/* Link de login */
 .cadastro-login {
     margin-top: 15px;
 }
@@ -1284,7 +1274,132 @@ form .register {
     font-weight: bold;
 }
 
+.login-right-side-password1 {
+    flex: 1;
+    padding: 40px;
+    text-align: center;
+    background: white;
+}
 
+.login-right-side-password1 img {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-right-side-password1 h2 {
+    margin-bottom: 30px;
+}
+
+.forgot-password1 {
+    background: #3E1645;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.login-right-side-password1 label {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+.forgot-password1-input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.forgot-password2-input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    margin-bottom: 8px;
+}
+
+.info-title-about-us {
+    margin-left: 40px;
+    color: #202020;
+    font-family: Poppins, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 2.88px;
+}
+
+.filter-title-container-about-us {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.title-container {
+    margin-left: 40px;
+}
+
+.about-us-container {
+    max-width: 800px;
+    margin-left: 40px;
+}
+
+.about-us-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.privacy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+
+.privacy-container {
+    max-width: 800px;
+    margin-left: 40px;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.privacy-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.privacy-container ul {
+    padding-left: 20px;
+}
+
+.privacy-container ul li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+}
 
 
 
@@ -1388,7 +1503,6 @@ footer {
     }
 }
 
-/* Ajustes para hero section em mobile */
 @media (max-width: 768px) {
 
     #menu-icon{
@@ -1421,18 +1535,15 @@ footer {
         display: none;
     }
 
-     /* Ajuste do padding da navbar */
      .navbar {
         padding: 20px 30px;
         position: relative;
     }
     
-    /* Ajuste dos cards de novidades */
     .items-list {
         grid-template-columns: 1fr;
     }
-    
-    /* Ajuste dos cards "Compartilhe e Receba" */
+
     .cards-container {
         flex-direction: column;
         align-items: center;
@@ -1641,7 +1752,34 @@ footer {
         flex-wrap: wrap;
     }
 
+    .about-us-text {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+    }
+    .privacy-container {
+        max-width: 100%;
+        margin-left: 20px;
+        font-size: 14px;
+    }
 
+    .privacy-container h3 {
+        font-size: 18px;
+    }
+
+    .privacy-container ul {
+        padding-left: 15px;
+    }
+
+    .info-title-about-us {
+        font-size: 24px;
+        margin-left: 20px;
+    }
 
 
 

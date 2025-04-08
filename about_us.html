@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Meu Perfil</title>
+        <title>Sobre Nós</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
                 <li><a href="./items.html">ITENS DISPONÍVEIS</a></li>
                 <li><a href="./donate.html">DOAR ITEM</a></li>
                 <li><a href="./request.html">PEDIR ITEM</a></li>
-                <li><a href="./profile.html" class="active">PERFIL</a></li>
+                <li><a href="./profile.html">PERFIL</a></li>
             </ul>
             <a href="./login.html" class="login-btn">ENTRAR</a>
         </nav>
@@ -34,39 +34,26 @@
         <section class="profile">
             <div class="filter-title-container-profile">
                 <div style="display: flex; align-items: center; gap: 8px;">
-                    <img src="./assets/img/SquaresFour.png" alt="Ícone">
-                    <h2 class="info-title">PERFIL</h2>
+                    <h2 class="info-title-about-us">SOBRE NÓS</h2>
                 </div>
-                <img class="photo-profile" src="./assets/img/profile.png" alt="Foto do perfil">
             </div>
-
-            <div class="container mt-4">
-                <div class="card profile-card">
-                    <div class="card-body">
-                        <form>
-                            <div class="mb-3">
-                                <label for="nome" class="form-label">Nome:</label>
-                                <input type="text" class="form-control" id="nome" placeholder="Digite seu nome">
-                            </div>
             
-                            <div class="mb-3">
-                                <label for="cep" class="form-label">CEP:</label>
-                                <input type="text" class="form-control" id="cep" placeholder="00000-000">
-                            </div>
-            
-                            <div class="form-check d-flex align-items-center gap-2 form-control">
-                                <i class="bi bi-bell"></i>
-                                <label class="form-check-label notification form-control" for="notificacoes"><b>ATIVAR NOTIFICAÇÕES</b></label>
-                                <input class="form-check-input ms-auto notification-check" type="checkbox" id="notificacoes">
-                            </div>
-            
-                            <div class="d-flex justify-content-between mt-4">
-                                <button type="button" class="btn btn-outline-secondary">Excluir Conta</button>
-                                <button type="submit" class="btn btn-primary sair-btn">Sair</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <div class="container mt-4 about-us-container">
+                <p class="about-us-text">
+                    No Compartilha +, acreditamos que pequenos gestos podem gerar grandes mudanças.
+                    Criamos este espaço para conectar quem tem algo a doar com quem precisa receber,
+                    formando uma rede de solidariedade, empatia e transformação.
+                </p>
+                <p class="about-us-text">
+                    Aqui, cada objeto doado carrega mais do que sua utilidade: carrega histórias, carinho e esperança.
+                    Seja um livro, uma peça de roupa ou um móvel, tudo pode ganhar um novo começo nas mãos de quem realmente precisa.
+                </p>
+                <p class="about-us-text">
+                    Nossa missão é simples: compartilhar mais e construir juntos um mundo mais justo, humano e acolhedor.
+                </p>
+                <p class="about-us-text highlight-text">
+                   <b>Junte-se a nós nessa corrente do bem.</b>
+                </p>
             </div>
         </section>
 
