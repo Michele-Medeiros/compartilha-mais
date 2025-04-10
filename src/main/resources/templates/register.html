@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - COMPARTILHA+</title>
+
+    <!-- Corrigindo o link para CSS -->
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<main>
+    <section class="register-form">
+        <div class="cadastro-wrapper">
+            <div class="cadastro-container">
+                <div class="cadastro-left-side">
+                    <img th:src="@{/images/img-registrar.png}" alt="Compartilha+">
+                </div>
+
+                <div class="cadastro-right-side">
+                    <h1>Cadastro</h1>
+
+                    <form class="register" th:action="@{/cadastrar}" th:object="${cadastro}" method="post">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Nome:</label>
+                                <input type="text" th:field="*{nome}" placeholder="Escreva aqui" required>
+                                <span class="error-msg">⚠ Campo Obrigatório</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone:</label>
+                                <input type="text" th:field="*{telefone}" placeholder="Escreva aqui" required>
+                                <span class="error-msg">⚠ Campo Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input type="email" th:field="*{email}" placeholder="Escreva aqui" required>
+                                <span class="error-msg">⚠ Campo Obrigatório</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Senha:</label>
+                                <input type="password" th:field="*{senha}" placeholder="Escreva aqui" required>
+                                <span class="error-msg">⚠ Campo Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <h4 class="endereco">ENDEREÇO</h4>
+
+                        <p class="endereco-info">
+                            Seu endereço será coletado apenas para fins de cadastro e para exibição de itens doados por estado.
+                            Ele NÃO será exibido na plataforma. Caso você solicite um item de doação, o compartilhamento do seu endereço
+                            com o doador deverá ser feito por e-mail.
+                        </p>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>CEP:</label>
+                                <input type="text" th:field="*{endereco.cep}" placeholder="Escreva aqui" required>
+                                <span class="error-msg">⚠ Campo Obrigatório</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Rua:</label>
+                                <input type="text" th:field="*{endereco.rua}" placeholder="Escreva aqui" required>
+                                <span class="error-msg">⚠ Campo Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Bairro:</label>
+                                <input type="text" th:field="*{endereco.bairro}" placeholder="Escreva aqui" required>
+                                <span class="error-msg">⚠ Campo Obrigatório</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Estado:</label>
+                                <input type="text" th:field="*{endereco.estado}" placeholder="Escreva aqui" required>
+                                <span class="error-msg">⚠ Campo Obrigatório</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="cadastro-btn">CADASTRAR</button>
+                    </form>
+
+                    <p class="cadastro-login">Já é cadastrado? <a th:href="@{/login}">Acessar</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Corrigindo o link para o script -->
+<script th:src="@{/script.js}"></script>
+</body>
+</html>

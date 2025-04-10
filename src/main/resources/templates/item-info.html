@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do Item</title>
+
+    <!-- Bootstrap + Icons + Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS customizado -->
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+
+<!-- NAVBAR (fragmento) -->
+<header>
+    <div th:replace="~{fragments/nav :: nav}"></div>
+</header>
+
+<main>
+    <section class="item-detail-page">
+        <div class="filter-title-container text-center my-4">
+            <img th:src="@{/images/SquaresFour.png}" alt="Ícone">
+            <h2 class="info-title mt-2">INFORMAÇÕES DO ITEM</h2>
+            <p class="border-bottom"></p>
+        </div>
+
+        <div class="item-content-section pink-background container">
+            <div class="item-main-display row mb-4">
+                <div class="item-basic-info col-md-12">
+                    <h1 class="item-title" th:text="${produto.descricao}">BLUSA DE MANGA LONGA</h1>
+                    <div class="item-specs-grid row">
+                        <div class="col-sm-4">
+                            <p><strong>Classe:</strong> <span th:text="${produto.tipo}">Roupa</span></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p><strong>Gênero:</strong> <span th:text="${produto.categoria}">Feminino</span></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p><strong>Tamanho:</strong> <span th:text="${produto.tamanho}">M</span></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p><strong>Cor:</strong> <span th:text="${produto.cor}">Rosa Claro</span></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p><strong>Tipo:</strong> <span th:text="${produto.tipo}">Usado</span></p>
+                        </div>
+                        <div class="col-sm-4">
+                            <p><strong>Estado:</strong> <span th:text="${produto.tipo}">São Paulo</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="description-box mb-4">
+                <h3 class="section-subtitle">Descrição:</h3>
+                <div class="description-text">
+                    <p><strong>Desc:</strong> <span th:text="${produto.descricao}">São Paulo</span></p>
+                </div>
+            </div>
+
+            <div class="gallery-container mb-4">
+                <h3 class="section-subtitle">Galeria de imagens:</h3>
+                <div class="gallery-grid row">
+                    <div class="gallery-item col-md-4 mb-3">
+                        <img th:src="@{/images/blusa1-rosa.png}" class="img-fluid" alt="Vista frontal">
+                    </div>
+                    <div class="gallery-item col-md-4 mb-3">
+                        <img th:src="@{/images/blusa2-rosa.png}" class="img-fluid" alt="Detalhe do tecido">
+                    </div>
+                    <div class="gallery-item col-md-4 mb-3">
+                        <img th:src="@{/images/blusa3-rosa.png}" class="img-fluid" alt="Etiqueta">
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons text-center mb-4">
+                <a th:href="@{/}" class="btn btn-secondary me-2">VOLTAR</a>
+                <a th:href="@{/solicitar}" class="btn btn-primary">SOLICITAR DOAÇÃO</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER (fragmento) -->
+<footer>
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</footer>
+
+<!-- Scripts -->
+<script th:src="@{/script.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

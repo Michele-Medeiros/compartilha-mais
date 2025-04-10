@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPARTILHA+</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div th:replace="~{fragments/nav :: nav}"> </div>
+    <main>
+        <section class="hero">
+            <div class="hero-container d-flex justify-content-between align-items-end">
+                <div class="hero-text">
+                    <h1>DOE, TRANSFORME <br> 
+                        <span class="highlight">E FAÇA A</span>
+                        DIFERENÇA!
+                    </h1>
+                    <p>Dê um Novo Propósito aos Seus Pertences!</p>
+<!--                    precisa ajustar o botão doar-->
+                    <a th:href="@{/donate}" class="btn-doar">DOAR ITEM</a>
+                </div>
+        
+                <div class="hero-image position-relative">
+                    <img th:src="@{/images/img1.png}" class="img-fluid" alt="Mulher segurando presente">
+
+                    <i class="bi bi-star-fill position-absolute star star1"></i>
+                    <i class="bi bi-star-fill position-absolute star star2"></i>
+                    <i class="bi bi-star-fill position-absolute star star3"></i>
+                    <i class="bi bi-star-fill position-absolute star star4"></i>
+                    <i class="bi bi-star-fill position-absolute star star5"></i>
+                   
+                </div>
+            </div>
+        </section>
+
+        <section class="novidades">
+            <div class="section-header">
+                <h2 class="section-title">NOVIDADES</h2>
+                <a th:href="@{/items}" class="ver-mais">VER MAIS</a>
+            </div>
+            <div class="items-list">
+                <div class="item-card">
+                    <div class="item-img">
+                        <img th:src="@{/images/camiseta-preta.png}" alt="Roupa">
+                    </div>
+                    <div class="item-info">
+                        <h3>CAMISETA MASCULINA</h3>
+                        <p>Classe: <span><b>Roupa</b></span></p>
+                        <p>Gênero: <span><b>Masculino</b></span></p>
+                        <p>Tamanho: <span><b>M</b></span></p>
+                        <p>Cor: <span><b>Azul</b></span></p>
+                        <p>Tipo: <span><b>Usado</b></span></p>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-img">
+                        <img th:src="@{/images/camiseta-preta.png}" alt="Roupa">
+                    </div>
+                    <div class="item-info">
+                        <h3>CAMISETA MASCULINA</h3>
+                        <p>Classe: <span><b>Roupa</b></span></p>
+                        <p>Gênero: <span><b>Masculino</b></span></p>
+                        <p>Tamanho: <span><b>M</b></span></p>
+                        <p>Cor: <span><b>Azul</b></span></p>
+                        <p>Tipo: <span><b>Usado</b></span></p>
+                    </div>
+                </div>
+
+                <div class="item-card">
+                    <div class="item-img">
+                        <img th:src="@{/images/camiseta-preta.png}" alt="Roupa">
+                    </div>
+                    <div class="item-info">
+                        <h3>CAMISETA MASCULINA</h3>
+                        <p>Classe: <span><b>Roupa</b></span></p>
+                        <p>Gênero: <span><b>Masculino</b></span></p>
+                        <p>Tamanho: <span><b>M</b></span></p>
+                        <p>Cor: <span><b>Azul</b></span></p>
+                        <p>Tipo: <span><b>Usado</b></span></p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="compartilha-receba">
+            <h2>COMPARTILHE E RECEBA</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <img th:src="@{/images/Group-86.png}" alt="Cadastrar Doação">
+                    <h3>CADASTRAR ITEM PARA DOAÇÃO</h3>
+                    <p>Dê um novo propósito aos seus itens!</p>
+                    <p>Cadastre roupas, móveis, eletrônicos e muito mais.</p>
+                    <p>Alguém pode estar precisando do que você não usa mais!</p>
+                </div>
+                <div class="card">
+                    <img th:src="@{/images/solicite-item.png}" alt="Solicitar Doação">
+                    <h3>SOLICITE ITEM PARA DOAÇÃO</h3>
+                    <p>Não encontrou o que precisa?</p>
+                    <p>Cadastre o item desejado e seja notificado quando alguém o disponibilizar para doação!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="app-section">
+            <div class="app-text">
+                <p>BAIXE NOSSO APP & <br>COMECE A DISTRIBUIR GENEROSIDADE!</p>
+                <div class="download-buttons">
+                    <a href="https://www.apple.com/br/app-store/" target="_blank">
+                        <img class="button-apple" th:src="@{/images/donwload-apple.png}" alt="Baixar para iOS">
+                    </a>
+                    <a href="https://play.google.com/store/games?hl=pt_BR&pli=1" target="_blank">
+                        <img class="button-google" th:src="@{/images/download-google.png}" alt="Baixar para Android">
+                    </a>
+                </div>
+            </div>
+            <div class="app-image">
+                <img th:src="@{/images/App.png}" alt="Imagem do Aplicativo">
+            </div>
+        </section>
+    </main>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+    <script src="script.js"></script>
+</body>
+</html>

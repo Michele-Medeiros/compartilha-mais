@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doar Item</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div th:replace="~{fragments/nav :: nav}"></div>
+</header>
+
+<main>
+    <section class="donate-item-form">
+        <div class="filter-title-container">
+            <img th:src="@{/images/SquaresFour.png}" alt="Ícone">
+            <h2 class="info-title">CADASTRAR ITEM</h2>
+            <p class="border-bottom"></p>
+        </div>
+
+        <form th:action="@{/produto/cadastrar}" method="post" enctype="multipart/form-data">
+            <section class="item-content-section pink-background">
+
+                <div class="info-1">
+                    <i class="bi bi-1-circle"></i>
+                    <h5 class="title-info1">INFORME A CATEGORIA DO ITEM A SER DOADO</h5>
+                </div>
+
+                <div class="alert">
+                    <p><span>ATENÇÃO:</span> PREENCHIMENTO <b>OBRIGATÓRIO</b></p>
+                    <select id="categoria" name="categoria" class="form-select" required>
+                        <option selected disabled>Selecione uma Categoria para item</option>
+                        <option value="roupa">Roupas</option>
+                        <option value="acessorio">Acessórios</option>
+                        <option value="eletronico">Eletrônicos</option>
+                        <option value="moveis">Móveis</option>
+                    </select>
+                </div>
+
+                <div class="info-1">
+                    <i class="bi bi-2-circle"></i>
+                    <h5 class="title-info1">DETALHE DO ITEM</h5>
+                </div>
+
+                <div class="alert">
+                    <p><span>ATENÇÃO:</span> PREENCHIMENTO <b>OBRIGATÓRIO</b></p>
+                    <div class="row g-2">
+                        <div class="col-md-4">
+                            <select name="tamanho" class="form-select" required>
+                                <option selected disabled>Tamanho</option>
+                                <option value="P">P</option>
+                                <option value="M">M</option>
+                                <option value="G">G</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select name="cor" class="form-select" required>
+                                <option selected disabled>Cor</option>
+                                <option value="vermelho">Vermelho</option>
+                                <option value="azul">Azul</option>
+                                <option value="preto">Preto</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select name="tipo" class="form-select" required>
+                                <option selected disabled>Tipo</option>
+                                <option value="camiseta">Camiseta</option>
+                                <option value="calca">Calça</option>
+                                <option value="jaqueta">Jaqueta</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="description-box mt-3">
+                    <p class="p-opcional-textarea"><span class="span-opcional-textarea">ATENÇÃO:</span> PREENCHIMENTO <b>OPCIONAL</b></p>
+                    <h3 class="section-subtitle">Descrição:</h3>
+                    <textarea class="form-control" name="descricao" rows="4" placeholder="Descreva o item..."></textarea>
+                </div>
+
+                <div class="info-1 mt-4">
+                    <i class="bi bi-3-circle"></i>
+                    <h5 class="title-info1">ANEXE FOTOS DO ITEM A SER DOADO</h5>
+                </div>
+
+                <div class="gallery-container-doar mb-3">
+                    <h3 class="section-subtitle">Galeria de imagens:</h3>
+                    <input type="file" name="imagens" accept="image/*" class="form-control" multiple required>
+                    <p class="p-opcional-textarea mt-2">
+                        <span class="span-opcional-textarea">ATENÇÃO:</span> <b>É OBRIGATÓRIO ANEXAR PELO MENOS UMA IMAGEM DO ITEM QUE SERÁ DOADO</b>
+                    </p>
+                </div>
+            </section>
+
+            <div class="action-buttons d-flex justify-content-between mt-4">
+                <a href="/" class="btn btn-secondary">VOLTAR</a>
+                <button type="submit" class="btn btn-primary">CADASTRAR ITEM</button>
+            </div>
+        </form>
+    </section>
+</main>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+<script src="script.js"></script>
+</body>
+</html>

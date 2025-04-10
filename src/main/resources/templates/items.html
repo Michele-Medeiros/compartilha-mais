@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Itens</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+
+    <div th:replace="~{fragments/nav :: nav}"></div>
+
+    <main>
+        <section class="items-filter">
+            <h2 class="filter-title">ITENS DISPONÍVEIS PARA DOAÇÃO</h2>
+            <div class="filters">
+<!--                <div class="filter-category">-->
+<!--                    <span class="filter-label">Filtrar por:</span>-->
+<!--                    <button>Roupas Femininas</button>-->
+<!--                    <button>Roupas Masculinas</button>-->
+<!--                    <button>Roupas Infantis</button>-->
+<!--                    <button>Calçados</button>-->
+<!--                    <button>Acessórios</button>-->
+<!--                    <button>Alimentos</button>-->
+<!--                    <button>Brinquedos</button>-->
+<!--                    <button>Eletrodomésticos</button>-->
+<!--                </div>-->
+                <div class="filter-category">
+                    <span class="filter-label">Filtrar por:</span>
+                    <a th:href="@{/items/categoria(categoria='Feminina')}" class="btn btn-outline-primary">Roupas Femininas</a>
+                    <a th:href="@{/items/categoria(categoria='Masculina')}" class="btn btn-outline-primary">Roupas Masculinas</a>
+                    <a th:href="@{/items/categoria(categoria='Infantil')}" class="btn btn-outline-primary">Roupas Infantis</a>
+                    <a th:href="@{/items/categoria(categoria='Calcados')}" class="btn btn-outline-primary">Calçados</a>
+                    <a th:href="@{/items/categoria(categoria='Acessorios')}" class="btn btn-outline-primary">Acessórios</a>
+                    <a th:href="@{/items/categoria(categoria='Alimentos')}" class="btn btn-outline-primary">Alimentos</a>
+                    <a th:href="@{/items/categoria(categoria='Brinquedos')}" class="btn btn-outline-primary">Brinquedos</a>
+                    <a th:href="@{/items/categoria(categoria='Eletrodomesticos')}" class="btn btn-outline-primary">Eletrodomésticos</a>
+                </div>
+                <div class="filter-advanced">
+                    <span class="filter-label">Filtrar por:</span>
+                    <select><option>Categorias</option></select>
+                    <select><option>Tipo</option></select>
+                    <select><option>Tamanho</option></select>
+                    <select><option>Cor</option></select>
+                    <select><option>Estado</option></select>
+                </div>
+            </div>
+        </section>
+
+        <section class="items-list">
+            <div th:each="produto : ${produtos}" class="item-card">
+                <a th:href="@{'/item-info/' + ${produto.id}}" class="item-card-link">
+                    <div class="item-img">
+                        <img th:src="@{/images/camiseta-preta.png}" alt="Imagem do produto">
+                    </div>
+                    <div class="item-info">
+                        <h3 th:text="${produto.descricao}">CAMISETA MASCULINA</h3>
+                        <p>Classe: <span><b th:text="${produto.categoria}">Roupa</b></span></p>
+                        <p>Gênero:
+                            <span>
+                        <b th:text="${produto.categoria == 'Feminina' ? 'Feminino' : (produto.categoria == 'Masculina' ? 'Masculino' : 'Infantil')}">
+                            Masculino
+                        </b>
+                    </span>
+                        </p>
+                        <p>Tamanho: <span><b th:text="${produto.tamanho}">M</b></span></p>
+                        <p>Cor: <span><b th:text="${produto.cor}">Azul</b></span></p>
+                        <p>Tipo: <span><b th:text="${produto.tipo}">Usado</b></span></p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+
+        <div class="pagination d-flex justify-content-center mt-4">
+            <button class="pagination-arrow btn btn-light">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <!-- Os botões de página serão inseridos dinamicamente aqui -->
+            <button class="pagination-arrow btn btn-light">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+        </div>
+
+    </main>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+    <script src="script.js"></script>
+</body>
+</html>
