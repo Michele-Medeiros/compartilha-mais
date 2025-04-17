@@ -50,9 +50,6 @@
                         <div class="col-sm-4">
                             <p><strong>Tipo:</strong> <span th:text="${produto.tipo}">Usado</span></p>
                         </div>
-                        <div class="col-sm-4">
-                            <p><strong>Estado:</strong> <span th:text="${produto.tipo}">São Paulo</span></p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -81,11 +78,25 @@
                 </div>
             </div>
 
-            <div class="action-buttons text-center mb-4">
-                <a th:href="@{/}" class="btn btn-secondary me-2">VOLTAR</a>
-                <a th:href="@{/solicitar}" class="btn btn-primary">SOLICITAR DOAÇÃO</a>
-            </div>
+<!--            <div class="action-buttons text-center mb-4">-->
+<!--                <a th:href="@{/items}" class="btn btn-secondary me-2">VOLTAR</a>-->
+<!--                <li th:if="${session.usuarioLogado != null}">-->
+<!--                <li>-->
+<!--                    <a th:href="@{/request}" class="btn btn-primary">SOLICITAR DOAÇÃO</a>-->
+<!--                </li>-->
+        <div class="action-buttons text-center mb-4">
+            <a th:href="@{/items}" class="btn btn-secondary me-2">VOLTAR</a>
+
+            <form th:action="@{'/request/' + ${produto.id}}" method="post" class="d-inline">
+                <input type="hidden" name="descricao" th:value="${produto.descricao}" />
+                <input type="hidden" name="tipo" th:value="${produto.tipo}" />
+                <input type="hidden" name="categoria" th:value="${produto.categoria}" />
+                <input type="hidden" name="tamanho" th:value="${produto.tamanho}" />
+                <input type="hidden" name="cor" th:value="${produto.cor}" />
+                <button type="submit" class="btn btn-primary">SOLICITAR DOAÇÃO</button>
+            </form>
         </div>
+
     </section>
 </main>
 

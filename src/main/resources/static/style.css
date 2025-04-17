@@ -1273,6 +1273,36 @@ form .register {
     font-weight: bold;
 }
 
+.item-card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.items-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item-img {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-img img {
+    height: 100%;
+    object-fit: cover;
+}
+
 
 
 

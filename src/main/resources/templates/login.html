@@ -13,12 +13,13 @@
     </head>
 <body>
 
+<div th:replace="~{fragments/nav :: nav}"> </div>
+
     <main>
         <section class="login-form">
             <div class="login-wrapper">
                 <div class="login-container">
                     <div class="login-left-side">
-<!--                        <img src="./assets/img/login.png" alt="Ilustração">-->
                         <img th:src="@{/images/login.png}" alt="Ilustração">
                     </div>
 
@@ -34,24 +35,6 @@
                             <p>OU</p>
                             <span></span>
                         </div>
-
-<!--                        <form th:action="@{/login}" method="post">-->
-<!--                            <label>Email:</label>-->
-<!--                            <input type="email" name="email" class="login-input" placeholder="exemplo@gmail.com" required>-->
-
-<!--                            <label>Senha:</label>-->
-<!--                            <input type="password" name="senha" class="login-input" placeholder="**********" required>-->
-
-<!--                            <div class="login-options">-->
-<!--                                <label><input type="checkbox" name="lembrarLogin"> LEMBRAR LOGIN</label>-->
-<!--                                <a href="#">Esqueceu sua senha?</a>-->
-<!--                            </div>-->
-
-<!--                            <button th:href="@{/login}" type="submit" class="login-submit">ENTRAR</button>-->
-
-<!--                            &lt;!&ndash; Mensagem de erro (caso esteja usando no controller) &ndash;&gt;-->
-<!--                            <p th:if="${erro}" th:text="${erro}" class="erro-msg"></p>-->
-<!--                        </form>-->
 
                         <form th:action="@{/login}" method="post">
                             <label>Email:</label>
@@ -79,9 +62,7 @@
             </div>
         </section>
     </main>
-
-    
-
-    <script src="script.js"></script>
+    <div th:replace="~{fragments/footer :: footer}"></div>
+    <script th:src="@{/script.js}"></script>
 </body>
 </html>

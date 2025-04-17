@@ -9,6 +9,7 @@
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
 <body>
+<div th:replace="~{fragments/nav :: nav}"> </div>
 <main>
     <section class="register-form">
         <div class="cadastro-wrapper">
@@ -93,7 +94,7 @@
     </section>
 </main>
 
-<!-- Corrigindo o link para o script -->
-<script th:src="@{/script.js}"></script>
+    <div th:replace="~{fragments/footer :: footer}"></div>
+    <script th:src="@{/script.js}"></script>
 </body>
 </html>

@@ -20,27 +20,6 @@ public class ControllerIndex {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    @GetMapping("/")
-    public String index (){
-        return "index";
-    }
-
-
-    @GetMapping("/donate")
-    public String donate(){
-        return "donate";
-    }
-
-    @GetMapping("/request")
-    public String request(){
-        return "request";
-    }
-
-    @GetMapping("/faq")
-    public String faq(){
-        return "faq";
-    }
-
     @GetMapping("/password_1")
     public String password_1(){
         return "password_1";
@@ -51,15 +30,7 @@ public class ControllerIndex {
         return "password_2";
     }
 
-    @GetMapping("/privacy")
-    public String privacy(){
-        return "privacy";
-    }
 
-    @GetMapping("/about_us")
-    public String about_us(){
-        return "about_us";
-    }
 
     @GetMapping("/profile")
     public String profile(Model model, HttpSession session) {

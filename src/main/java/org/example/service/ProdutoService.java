@@ -3,6 +3,8 @@ package org.example.service;
 import org.example.domain.Produto;
 import org.example.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,6 +38,9 @@ public class ProdutoService {
 
     public List<Produto> buscarPorCategoria(String categoria) {
         return produtoRepository.findByCategoriaIgnoreCase(categoria);
+    }
+    public void solicitarProduto(Long id) {
+        produtoRepository.deleteById(id);
     }
 
 }

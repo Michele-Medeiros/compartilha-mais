@@ -20,7 +20,7 @@ public class DataInitializer {
                 usuario.setEmail("teste@email.com");
                 usuario.setSenha("123456"); // atenção: senha em texto plano, apenas para testes
                 usuario.setTelefone(1234567);
-                usuario.setNome("Ricardo");
+                usuario.setNome("Bob Esponja");
                 Endereco endereco = new Endereco();
                 endereco.setCep(121212);
                 endereco.setRua("Tuiuti");
@@ -37,11 +37,11 @@ public class DataInitializer {
     CommandLineRunner initData(ProdutoRepository produtoRepository) {
         return args -> {
             // Femininas
-            produtoRepository.save(new Produto("Feminina", "M", "Rosa", "Novo", "Vestido de verão floral"));
+            produtoRepository.save(new Produto("Feminina", "M", "Rosa", "Novo", "Blusa Moletom"));
             produtoRepository.save(new Produto("Feminina", "G", "Preto", "Usado", "Blusa de lã"));
 
             // Masculinas
-            produtoRepository.save(new Produto("Masculina", "M", "Azul", "Novo", "Camisa social manga longa"));
+            produtoRepository.save(new Produto("Masculina", "M", "Azul", "Novo", "Camiseta"));
             produtoRepository.save(new Produto("Masculina", "G", "Jeans", "Usado", "Bermuda jeans casual"));
 
             // Infantil
