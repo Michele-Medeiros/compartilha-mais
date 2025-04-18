@@ -121,8 +121,47 @@
 
             <div class="action-buttons">
                 <button class="back-btn-doar">VOLTAR</button>
-                <button class="donate-btn-doar">CADASTRAR ITEM</button>
+                <button id="openModalBtn" class="donate-btn-doar">CADASTRAR ITEM</button>
+              </div>
+
+              <div id="successModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="modal-body">
+                        <div class="icon-container">
+                            <span class="success-icon">✔</span>
+                            <span class="border-modal"></span>
+                            <div>
+                                <h3>Edição salva com sucesso!</h3>
+                                <p>A alteração foi registrada com sucesso e será processada em breve.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  const openModalBtn = document.getElementById("openModalBtn");
+                  const modal = document.getElementById("successModal");
+                  const closeBtn = document.querySelector(".close");
+              
+                  openModalBtn.addEventListener("click", function () {
+                    modal.style.display = "block";
+                  });
+              
+                  closeBtn.addEventListener("click", function () {
+                    modal.style.display = "none";
+                  });
+              
+                  window.addEventListener("click", function (event) {
+                    if (event.target === modal) {
+                      modal.style.display = "none";
+                    }
+                  });
+                });
+              </script>
+  
 
         </main>
 

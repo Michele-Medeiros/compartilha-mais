@@ -96,6 +96,45 @@
                 <button class="donate-btn-request">ENVIAR</button>
             </div>
 
+
+            <div id="successModalRequest" class="modal">
+                <div class="modal-content">
+                  <span class="close-request">&times;</span>
+                  <div class="modal-body">
+                    <div class="icon-container">
+                      <span class="success-icon">✔</span>
+                      <span class="border-modal"></span>
+                      <div>
+                        <h3>Solicitação enviada com sucesso!</h3>
+                        <p>Sua solicitação foi registrada e será processada em breve.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  const openModalBtnRequest = document.querySelector(".donate-btn-request");
+                  const modalRequest = document.getElementById("successModalRequest");
+                  const closeBtnRequest = document.querySelector(".close-request");
+              
+                  openModalBtnRequest.addEventListener("click", function () {
+                    modalRequest.style.display = "block";
+                  });
+              
+                  closeBtnRequest.addEventListener("click", function () {
+                    modalRequest.style.display = "none";
+                  });
+              
+                  window.addEventListener("click", function (event) {
+                    if (event.target === modalRequest) {
+                      modalRequest.style.display = "none";
+                    }
+                  });
+                });
+              </script>
+
         </main>
 
         <footer>

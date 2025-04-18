@@ -1402,6 +1402,91 @@ form .register {
 }
 
 
+/* modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-request {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.modal-body {
+    padding: 0 16px;
+}
+
+
+.icon-container {
+    margin-bottom: 16px;
+    display: flex;
+    margin-top: 70px;
+    align-items: center;
+}
+
+.success-icon {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-right: 12px;
+    position: absolute;
+    top: 2px;
+}
+
+.modal-body h3 {
+    color: #333;
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.modal-body p {
+    color: #666;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 
 
 
