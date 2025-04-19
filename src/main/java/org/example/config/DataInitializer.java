@@ -37,15 +37,15 @@ public class DataInitializer {
     CommandLineRunner initData(ProdutoRepository produtoRepository) {
         return args -> {
             // Femininas
-            produtoRepository.save(new Produto("Feminina", "M", "Rosa", "Novo", "Blusa Moletom"));
-            produtoRepository.save(new Produto("Feminina", "G", "Preto", "Usado", "Blusa de lã"));
+            produtoRepository.save(new Produto("Roupa", "M", "Rosa", "Novo", "Blusa moletom", "blusa1-rosa.png"));
+            produtoRepository.save(new Produto("Roupa", "P", "Preto", "Usado", "Saia", "saia-preta.png"));
 
             // Masculinas
-            produtoRepository.save(new Produto("Masculina", "M", "Azul", "Novo", "Camiseta"));
-            produtoRepository.save(new Produto("Masculina", "G", "Jeans", "Usado", "Bermuda jeans casual"));
-
-            // Infantil
-            produtoRepository.save(new Produto("Infantil", "P", "Amarelo", "Novo", "Macacão com estampa de animais"));
+            produtoRepository.save(new Produto("Roupa", "M", "Azul", "Novo", "Camiseta", "camiseta-azul.png"));
+            produtoRepository.save(new Produto("Roupa", "G", "Jeans", "Usado", "Bermuda", "bermuda-casual.png"));
+//
+//            // Infantil
+//            produtoRepository.save(new Produto("Masculino", "P", "Vermelho", "Novo", "Camiseta", "camiseta-vermelha.png"));
         };
     }
 }

@@ -9,9 +9,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Controller
 public class ProdutoController {
@@ -22,11 +28,50 @@ public class ProdutoController {
     @Autowired
     private ProdutoRepository produtoRepository;
 
+//    @PostMapping("/produto/cadastrar")
+//    public String cadastrarProduto(@ModelAttribute Produto produto) {
+//        service.salvarProduto(produto);
+//        System.out.println("Produto cadastrado: " + produto.getCategoria());
+//        return "redirect:/";
+//    }
+
+    //método para cadastrar a imagem tbm
+
     @PostMapping("/produto/cadastrar")
-    public String cadastrarProduto(@ModelAttribute Produto produto) {
+    public String cadastrarProduto(@ModelAttribute Produto produto,
+                                   @RequestParam("imagens") MultipartFile[] imagens) {
+        for (MultipartFile imagem : imagens) {
+            if (!imagem.isEmpty()) {
+                try {
+                    // Gera um nome único para a imagem
+                    String nomeArquivo = UUID.randomUUID() + "_" + imagem.getOriginalFilename();
+
+                    // Caminho onde a imagem será salva
+                    Path caminho = Paths.get("target/classes/static/images/" + nomeArquivo);
+                    Files.write(caminho, imagem.getBytes());
+
+                    // Atualiza o nome da imagem no produto
+                    produto.setImagem(nomeArquivo);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    // Se der erro, você pode redirecionar com ?erro ou exibir uma mensagem
+                    return "redirect:/produto/cadastrar?erro";
+                }
+            }
+        }
+
+        // Aqui você salva o produto no banco (caso esteja usando JPA ou outro repositório)
+        // exemplo: produtoRepository.save(produto);
+        // Salva no banco de dados
         service.salvarProduto(produto);
         System.out.println("Produto cadastrado: " + produto.getCategoria());
-        return "redirect:/";
+        return "redirect:/produto/cadastrar?sucesso";
+    }
+
+    @GetMapping("/produto/cadastrar")
+    public String exibirFormularioCadastro() {
+        return "index"; // substitua pelo nome correto da sua view, sem a extensão .html
     }
 
     @GetMapping("/item-info/{id}")
@@ -71,10 +116,18 @@ public class ProdutoController {
         return "request";
     }
 
-    @PostMapping("/produtos")
-    public String salvarProduto(@ModelAttribute Produto produto) {
-        produtoRepository.save(produto);
-        return "redirect:/produtos";
+//   @PostMapping("/produtos")
+//    public String salvarProduto(@ModelAttribute Produto produto) {
+//        produtoRepository.save(produto);
+//        return "redirect:/produtos";
+//    }
+
+    @PostMapping("/produtos/deletar")
+    public String deletarProduto(@ModelAttribute Produto produto) {
+        if (produto.getId() != null) {
+            produtoRepository.deleteById(produto.getId());
+        }
+        return "redirect:/"; // redireciona para a home
     }
 
     @GetMapping("/request")

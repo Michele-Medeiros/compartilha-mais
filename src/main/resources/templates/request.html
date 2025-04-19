@@ -25,7 +25,8 @@
             <p class="border-bottom"></p>
         </div>
 
-        <form th:action="@{/produtos}" th:object="${produto}" method="post">
+        <form th:action="@{/produtos/deletar}" th:object="${produto}" method="post">
+            <input type="hidden" th:field="*{id}" />
             <section class="item-content-section pink-background">
                 <!-- CATEGORIA -->
                 <div class="info-1">

@@ -64,29 +64,18 @@
             </div>
 
             <div class="gallery-container mb-4">
+
                 <h3 class="section-subtitle">Galeria de imagens:</h3>
                 <div class="gallery-grid row">
                     <div class="gallery-item col-md-4 mb-3">
-                        <img th:src="@{/images/blusa1-rosa.png}" class="img-fluid" alt="Vista frontal">
+                        <img th:src="@{'/images/' + ${produto.imagem}}" class="img-fluid" alt="Vista frontal">
                     </div>
-                    <div class="gallery-item col-md-4 mb-3">
-                        <img th:src="@{/images/blusa2-rosa.png}" class="img-fluid" alt="Detalhe do tecido">
-                    </div>
-                    <div class="gallery-item col-md-4 mb-3">
-                        <img th:src="@{/images/blusa3-rosa.png}" class="img-fluid" alt="Etiqueta">
-                    </div>
+<!--                    fazer galeria de imagens      -->
                 </div>
             </div>
-
-<!--            <div class="action-buttons text-center mb-4">-->
-<!--                <a th:href="@{/items}" class="btn btn-secondary me-2">VOLTAR</a>-->
-<!--                <li th:if="${session.usuarioLogado != null}">-->
-<!--                <li>-->
-<!--                    <a th:href="@{/request}" class="btn btn-primary">SOLICITAR DOAÇÃO</a>-->
-<!--                </li>-->
         <div class="action-buttons text-center mb-4">
             <a th:href="@{/items}" class="btn btn-secondary me-2">VOLTAR</a>
-
+            <li th:if="${session.usuarioLogado != null}">
             <form th:action="@{'/request/' + ${produto.id}}" method="post" class="d-inline">
                 <input type="hidden" name="descricao" th:value="${produto.descricao}" />
                 <input type="hidden" name="tipo" th:value="${produto.tipo}" />

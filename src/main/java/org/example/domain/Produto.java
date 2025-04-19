@@ -10,8 +10,8 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity
 @RequiredArgsConstructor
+@Entity
 public class Produto {
 
     @Id
@@ -24,11 +24,14 @@ public class Produto {
     private String tipo;
     private String descricao;
 
-    public Produto(String categoria, String tamanho, String cor, String tipo, String descricao) {
+    private String imagem;
+
+    public Produto(String categoria, String tamanho, String cor, String tipo, String descricao, String imagem) {
         this.categoria = categoria;
         this.tamanho = tamanho;
         this.cor = cor;
         this.tipo = tipo;
         this.descricao = descricao;
+        this.imagem = imagem;
     }
 }
