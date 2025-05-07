@@ -145,18 +145,21 @@
 <script>
     const button = document.querySelector("#openModalBtn");
     const modal = document.querySelector("#modal");
-    const button_close = document.querySelector("#button_close");
+    const button_close = document.querySelector("#button_close");  // Botão de fechar modal
+    const form = document.querySelector("form");  // Seleciona o formulário
 
+    // Ao clicar no botão "CADASTRAR ITEM", mostramos o modal e impedimos o envio do formulário
     button.onclick = function (e) {
-        e.preventDefault(); // Impede o envio do formulário imediatamente
-        modal.showModal(); // Exibe o modal de sucesso
+        modal.showModal();  // Exibe o modal de sucesso
     }
 
+    // Ao clicar no botão "OK", envia o formulário e fecha o modal
     button_close.onclick = function () {
+        form.submit(); // Envia o formulário
         modal.close(); // Fecha o modal
     }
 
-    // Redireciona após o fechamento do modal
+    // Redireciona após o fechamento do modal (caso necessário)
     modal.addEventListener("close", function () {
         window.location.href = "/"; // Altere aqui para a URL desejada
     });

@@ -29,6 +29,11 @@ public class ProdutoController {
     @Autowired
     private ProdutoRepository produtoRepository;
 
+    @GetMapping("/produto/cadastrar")
+    public String exibirFormularioCadastro() {
+        return "index";
+    }
+
     @PostMapping("/produto/cadastrar")
     public String cadastrarProduto(@ModelAttribute Produto produto,
                                    @RequestParam("imagens") MultipartFile[] imagens,
@@ -39,7 +44,8 @@ public class ProdutoController {
             if (!imagem.isEmpty()) {
                 try {
                     String nomeArquivo = UUID.randomUUID() + "_" + imagem.getOriginalFilename();
-                    Path caminho = Paths.get("src/main/resources/static/images/" + nomeArquivo); // Corrigido o caminho
+                    // Caminho onde a imagem será salva
+                    Path caminho = Paths.get("target/classes/static/images/" + nomeArquivo);
                     Files.write(caminho, imagem.getBytes());
                     produto.setImagem(nomeArquivo);
                     imagemSalva = true;

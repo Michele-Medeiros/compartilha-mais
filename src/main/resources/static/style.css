@@ -1435,6 +1435,35 @@ footer {
 }
 
 
+dialog {
+    position: fixed; /* Para que o modal seja fixado na tela */
+    top: 50%; /* Move o modal para o meio da tela */
+    left: 50%; /* Move o modal para o meio da tela */
+    transform: translate(-50%, -50%); /* Ajusta para que o centro do modal fique alinhado com o centro da tela */
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Tamanho do modal, pode ser ajustado conforme necessário */
+    z-index: 1050; /* Garante que o modal fique sobre outros elementos */
+}
+
+/* Estilo para o botão OK */
+#button_close {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#button_close:hover {
+    background-color: #218838;
+}
+
+
+
 
 
 
