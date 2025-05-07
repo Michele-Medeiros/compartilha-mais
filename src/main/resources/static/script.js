@@ -183,27 +183,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.querySelector('form').addEventListener('submit', function(e) {
-    e.preventDefault();
     document.getElementById("successModal").style.display = "block";
     setTimeout(() => e.target.submit(), 2000);
 });
 
-window.addEventListener("DOMContentLoaded", function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const sucesso = urlParams.get('sucesso');
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    const openModalBtn = document.getElementById('openModalBtn');
+    const successModalElement = document.getElementById('successModal');
+    const successModal = new bootstrap.Modal(successModalElement, { keyboard: false });
 
-    if (sucesso !== null) {
-        const modal = document.getElementById('successModal');
-        if (modal) {
-            modal.style.display = 'block';
-        }
+    // Exibe o modal se a URL contiver ?success=true
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("success") === "true") {
+        successModal.show();
     }
 
-    // Fecha o modal se o usuário clicar no X
-    const closeBtn = document.querySelector('.close');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
+    // Exibe o modal ao clicar no botão
+    if (openModalBtn) {
+        openModalBtn.addEventListener('click', function (event) {
+            successModal.show();
+        });
+    }
+
+    // Valida o formulário antes do envio
+    if (form) {
+        form.addEventListener('submit', function (event) {
+            const categoria = document.querySelector('#categoria').value;
+            const tamanho = document.querySelector('[name="tamanho"]').value;
+            const cor = document.querySelector('[name="cor"]').value;
+            const tipo = document.querySelector('[name="tipo"]').value;
+            const imagens = document.querySelector('[name="imagens"]').files.length;
+
+            if (categoria && tamanho && cor && tipo && imagens > 0) {
+                // Se quiser enviar com AJAX, faça aqui
+                // Caso contrário, o formulário será enviado normalmente
+
+                // Exibe o modal de sucesso
+                successModal.show();
+            } else {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+            }
         });
     }
 });

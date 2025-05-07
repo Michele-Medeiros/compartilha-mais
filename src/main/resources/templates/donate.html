@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppin6s:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- CSS customizado -->
     <link rel="stylesheet" th:href="@{/style.css}">
 </head>
@@ -25,10 +25,9 @@
             <h2 class="info-title">CADASTRAR ITEM</h2>
             <p class="border-bottom"></p>
         </div>
-
+        <!-- Formulário -->
         <form th:action="@{/produto/cadastrar}" method="post" enctype="multipart/form-data">
             <section class="item-content-section pink-background">
-
                 <div class="info-1">
                     <i class="bi bi-1-circle"></i>
                     <h5 class="title-info1">INFORME A CATEGORIA DO ITEM A SER DOADO</h5>
@@ -93,7 +92,7 @@
                 </div>
 
                 <div class="gallery-container-doar mb-3">
-                    <h3 class="section-subtitle">x'Galeria de imagens:</h3>
+                    <h3 class="section-subtitle">Anexe a imagem:</h3>
                     <input type="file" name="imagens" accept="image/*" class="form-control" multiple required>
                     <p class="p-opcional-textarea mt-2">
                         <span class="span-opcional-textarea">ATENÇÃO:</span> <b>É OBRIGATÓRIO ANEXAR PELO MENOS UMA IMAGEM DO ITEM QUE SERÁ DOADO</b>
@@ -104,20 +103,35 @@
             <div class="action-buttons d-flex justify-content-between mt-4">
                 <a href="/" class="btn btn-secondary">VOLTAR</a>
                 <button type="submit" id="openModalBtn" class="btn btn-primary">CADASTRAR ITEM</button>
-<!--                    <button type="button" id="openModalBtn" class="donate-btn-doar">CADASTRAR ITEM</button>-->
+<!--                <button  id="openModalBtn" class="btn btn-primary">CADASTRAR ITEM</button>-->
+                <dialog id="modal">
+                    <h2 style="color: #28a745;">✔ Sucesso!</h2>
+                    <p style="margin: 15px 0;">
+                        A operação foi concluída com êxito.
+                    </p>
+                    <button id="button_close">
+                        OK
+                    </button>
+                </dialog>
             </div>
         </form>
-        <div id="successModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <div class="modal-body">
-                    <div class="icon-container">
-                        <span class="success-icon">✔</span>
-                        <span class="border-modal"></span>
-                        <div>
-                            <h3>Edição salva com sucesso!</h3>
-                            <p>A alteração foi registrada com sucesso e será processada em breve.</p>
-                        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Cadastro Realizado</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        O item foi cadastrado com sucesso! Agradecemos sua doação.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" onclick="window.location.reload();">Voltar para a página inicial</button>
                     </div>
                 </div>
             </div>
@@ -128,6 +142,26 @@
 <div th:replace="~{fragments/footer :: footer}"></div>
 <!-- Scripts -->
 <script th:src="@{/script.js}"></script>
-<script th:src="@{/script.js}"></script>
+<script>
+    const button = document.querySelector("#openModalBtn");
+    const modal = document.querySelector("#modal");
+    const button_close = document.querySelector("#button_close");
+
+    button.onclick = function (e) {
+        e.preventDefault(); // Impede o envio do formulário imediatamente
+        modal.showModal(); // Exibe o modal de sucesso
+    }
+
+    button_close.onclick = function () {
+        modal.close(); // Fecha o modal
+    }
+
+    // Redireciona após o fechamento do modal
+    modal.addEventListener("close", function () {
+        window.location.href = "/"; // Altere aqui para a URL desejada
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -21,6 +21,16 @@
                 <div class="cadastro-right-side">
                     <h1>Cadastro</h1>
 
+                    <!-- Mensagem de sucesso -->
+                    <div th:if="${mensagemSucesso}" class="mensagem-sucesso">
+                        <p th:text="${mensagemSucesso}"></p>
+                    </div>
+
+                    <!-- Mensagem de erro -->
+                    <div th:if="${mensagemErro}" class="mensagem-erro">
+                        <p th:text="${mensagemErro}"></p>
+                    </div>
+
                     <form class="register" th:action="@{/cadastrar}" th:object="${cadastro}" method="post">
                         <div class="form-row">
                             <div class="form-group">

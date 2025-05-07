@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 
@@ -23,16 +24,21 @@ public class CadastroController {
     @PostMapping("/cadastrar")
     public String criarCadastro(@Valid @ModelAttribute("usuario") Usuario usuario,
                                 BindingResult result,
-                                Model model) {
+                                Model model, RedirectAttributes redirectAttributes) {
 
         if (result.hasErrors()) {
+            // Mensagem de erro vai para o modelo da mesma requisição
             model.addAttribute("erro", "Preencha todos os campos obrigatórios.");
-            return "cadastro"; // volta para a página de cadastro com erro
+            return "cadastro"; // Retorna para a mesma view com os erros
         }
 
         userService.salvarCadastro(usuario);
-        return "redirect:/"; // redireciona para a home após sucesso
+
+        // Mensagem de sucesso para próxima requisição
+        redirectAttributes.addFlashAttribute("mensagem", "Cadastro realizado com sucesso!");
+        return "redirect:/cadastro";
     }
+
 
     @PostMapping("/deletar-conta")
     public String deletarConta(@RequestParam("senha") String senha,

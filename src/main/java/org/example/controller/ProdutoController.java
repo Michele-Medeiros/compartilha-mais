@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -28,50 +29,36 @@ public class ProdutoController {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-//    @PostMapping("/produto/cadastrar")
-//    public String cadastrarProduto(@ModelAttribute Produto produto) {
-//        service.salvarProduto(produto);
-//        System.out.println("Produto cadastrado: " + produto.getCategoria());
-//        return "redirect:/";
-//    }
-
-    //método para cadastrar a imagem tbm
-
     @PostMapping("/produto/cadastrar")
     public String cadastrarProduto(@ModelAttribute Produto produto,
-                                   @RequestParam("imagens") MultipartFile[] imagens) {
+                                   @RequestParam("imagens") MultipartFile[] imagens,
+                                   RedirectAttributes redirectAttributes) {
+        boolean imagemSalva = false;
+
         for (MultipartFile imagem : imagens) {
             if (!imagem.isEmpty()) {
                 try {
-                    // Gera um nome único para a imagem
                     String nomeArquivo = UUID.randomUUID() + "_" + imagem.getOriginalFilename();
-
-                    // Caminho onde a imagem será salva
-                    Path caminho = Paths.get("target/classes/static/images/" + nomeArquivo);
+                    Path caminho = Paths.get("src/main/resources/static/images/" + nomeArquivo); // Corrigido o caminho
                     Files.write(caminho, imagem.getBytes());
-
-                    // Atualiza o nome da imagem no produto
                     produto.setImagem(nomeArquivo);
-
+                    imagemSalva = true;
                 } catch (IOException e) {
                     e.printStackTrace();
-                    // Se der erro, você pode redirecionar com ?erro ou exibir uma mensagem
-                    return "redirect:/produto/cadastrar?erro";
+                    redirectAttributes.addFlashAttribute("erro", "Erro ao salvar a imagem.");
+                    return "redirect:/produto/cadastrar"; // Redireciona para a mesma página em caso de erro
                 }
             }
         }
 
-        // Aqui você salva o produto no banco (caso esteja usando JPA ou outro repositório)
-        // exemplo: produtoRepository.save(produto);
-        // Salva no banco de dados
-        service.salvarProduto(produto);
-        System.out.println("Produto cadastrado: " + produto.getCategoria());
-        return "redirect:/produto/cadastrar?sucesso";
-    }
+        if (imagemSalva) {
+            service.salvarProduto(produto); // Salva o produto
+            redirectAttributes.addFlashAttribute("sucesso", true); // Sinaliza para mostrar modal de sucesso
+        } else {
+            redirectAttributes.addFlashAttribute("erro", "Pelo menos uma imagem deve ser enviada.");
+        }
 
-    @GetMapping("/produto/cadastrar")
-    public String exibirFormularioCadastro() {
-        return "index"; // substitua pelo nome correto da sua view, sem a extensão .html
+        return "redirect:/produto/cadastrar"; // Redireciona após o POST
     }
 
     @GetMapping("/item-info/{id}")
