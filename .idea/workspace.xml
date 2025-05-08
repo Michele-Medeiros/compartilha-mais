@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ce37fdf-bf73-4f49-8f3f-4b2a2f193689" name="Changes" comment="">
+    <list default="true" id="3ce37fdf-bf73-4f49-8f3f-4b2a2f193689" name="Changes" comment="Finalização do modal">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ProdutoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/ProdutoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/ProdutoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/ProdutoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/ProdutoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/donate.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/donate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/items.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/items.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1744918437299</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Finalização do modal">
+      <created>1746599832968</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1746599832968</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,7 +152,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Melhorias" />
-    <option name="LAST_COMMIT_MESSAGE" value="Melhorias" />
+    <MESSAGE value="Finalização do modal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalização do modal" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
