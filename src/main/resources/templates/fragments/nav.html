@@ -28,7 +28,8 @@
     <ul class="nav-links">
         <li><a href="/" class="active">HOME</a></li>
         <li><a href="/items">ITENS DISPONÍVEIS</a></li>
-        <li><a href="/donate">DOAR ITEM</a></li>
+        <li th:if="${session.usuarioLogado != null}">
+            <a href="/donate">DOAR ITEM</a></li>
         <li th:if="${session.usuarioLogado != null}">
             <a href="/profile">PERFIL</a>
         </li>
