@@ -36,7 +36,7 @@ public class CadastroController {
 
         // Mensagem de sucesso para próxima requisição
         redirectAttributes.addFlashAttribute("mensagem", "Cadastro realizado com sucesso!");
-        return "redirect:/cadastro";
+        return "redirect:/login";
     }
 
 
