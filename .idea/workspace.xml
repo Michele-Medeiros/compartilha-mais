@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ce37fdf-bf73-4f49-8f3f-4b2a2f193689" name="Changes" comment="Finalização do modal">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
-    </list>
+    <list default="true" id="3ce37fdf-bf73-4f49-8f3f-4b2a2f193689" name="Changes" comment="Ajuste cadastro controller" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -136,7 +133,28 @@
       <option name="project" value="LOCAL" />
       <updated>1746599832968</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Mudança nomeclatura package com.exemple">
+      <created>1748494196881</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1748494196882</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Inclusão da rota Login e Senha do Banco de Dados">
+      <created>1748494289038</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1748494289038</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Ajuste cadastro controller">
+      <created>1748494376490</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1748494376490</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,13 +171,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Melhorias" />
     <MESSAGE value="Finalização do modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalização do modal" />
+    <MESSAGE value="Mudança nomeclatura package com.exemple" />
+    <MESSAGE value="Inclusão da rota Login e Senha do Banco de Dados" />
+    <MESSAGE value="Ajuste cadastro controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajuste cadastro controller" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/controller/ProdutoController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/org/compartilha/controller/ProdutoController.java</url>
           <line>60</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>

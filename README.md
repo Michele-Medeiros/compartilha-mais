@@ -88,5 +88,9 @@ Você verá a página inicial da aplicação.
   ```
 - JDBC URL padrão:
   ```
-  jdbc:h2:mem:testdb
+  datasource:
+    url: jdbc:h2:mem:compartilhadb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
   ```
