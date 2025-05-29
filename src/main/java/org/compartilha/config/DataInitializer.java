@@ -1,10 +1,10 @@
-package org.example.config;
+package org.compartilha.config;
 
-import org.example.domain.Endereco;
-import org.example.domain.Produto;
-import org.example.domain.Usuario;
-import org.example.repository.ProdutoRepository;
-import org.example.repository.UsuarioRepository;
+import org.compartilha.domain.Endereco;
+import org.compartilha.domain.Produto;
+import org.compartilha.domain.Usuario;
+import org.compartilha.repository.ProdutoRepository;
+import org.compartilha.repository.UsuarioRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

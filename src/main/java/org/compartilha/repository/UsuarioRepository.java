@@ -1,6 +1,6 @@
-package org.example.repository;
+package org.compartilha.repository;
 
-import org.example.domain.Usuario;
+import org.compartilha.domain.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

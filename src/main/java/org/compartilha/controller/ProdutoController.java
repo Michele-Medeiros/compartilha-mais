@@ -1,11 +1,9 @@
-package org.example.controller;
+package org.compartilha.controller;
 
-import org.example.domain.Produto;
-import org.example.repository.ProdutoRepository;
-import org.example.service.ProdutoService;
+import org.compartilha.domain.Produto;
+import org.compartilha.repository.ProdutoRepository;
+import org.compartilha.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +15,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Controller

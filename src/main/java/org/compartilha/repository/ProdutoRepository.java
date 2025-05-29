@@ -1,6 +1,6 @@
-package org.example.repository;
+package org.compartilha.repository;
 
-import org.example.domain.Produto;
+import org.compartilha.domain.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

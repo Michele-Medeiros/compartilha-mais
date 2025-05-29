@@ -1,9 +1,9 @@
-package org.example.controller;
+package org.compartilha.controller;
 
 import jakarta.servlet.http.HttpSession;
-import org.example.domain.Usuario;
-import org.example.repository.UsuarioRepository;
-import org.example.service.UserService;
+import org.compartilha.domain.Usuario;
+import org.compartilha.repository.UsuarioRepository;
+import org.compartilha.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

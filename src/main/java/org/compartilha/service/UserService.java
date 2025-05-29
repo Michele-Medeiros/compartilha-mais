@@ -1,7 +1,7 @@
-package org.example.service;
+package org.compartilha.service;
 
-import org.example.domain.Usuario;
-import org.example.repository.UsuarioRepository;
+import org.compartilha.domain.Usuario;
+import org.compartilha.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
